@@ -39,7 +39,9 @@
       </tbody>
     </table>
     <p v-if="error !== null" class="my-4">{{ error }}</p>
-    <WFButton @click="back"> Back </WFButton>
+    <div class="self-end md:self-center">
+      <WFButton @click="back"> Back </WFButton>
+    </div>
   </div>
 </template>
 
