@@ -1,5 +1,5 @@
 <template>
-  <div class="w-2/5 mx-auto my-16">
+  <div class="lg:w-2/5 px-4 lg:px-0 mx-auto my-16">
     <p class="mb-4">{{ landingText }}</p>
     <WFButton @click="login" :loading="loading">Login</WFButton>
   </div>
@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import WFButton from '@/components/WFButton.vue';
-import { AUTH0_SESSION_STORAGE_KEY, LANDING_TEXT } from '@/constants';
+import { LANDING_TEXT } from '@/constants';
 import { IAuthPlugin } from '@/utils/auth';
 import { defineComponent } from 'vue';
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-2/5 mx-auto my-16 flex flex-col items-center">
+  <div class="lg:w-2/5 mx-auto my-16 flex flex-col items-center">
     <p class="mb-4 text-center">{{ fullname }}</p>
     <p class="mb-16 text-center">{{ githubRepoUrl }}</p>
     <form @submit.prevent="displayWeather" class="flex flex-col items-center">

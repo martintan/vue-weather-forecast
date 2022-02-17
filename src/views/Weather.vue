@@ -1,20 +1,20 @@
 <template>
-  <div class="w-2/5 mx-auto my-16 flex flex-col items-center">
+  <div class="w-full md:w-2/5 px-4 md:px-0 mx-auto my-16 flex flex-col items-center">
     <div class="my-2" v-show="loading">
       <WFLoading :loading="loading" />
     </div>
     <table
       v-if="forecast !== null && !loading"
-      class="table-auto border-collapse border border-slate-500 mb-4"
+      class="table-auto border-collapse border border-slate-500 mb-4 w-full"
     >
       <thead>
         <tr>
           <th class="border border-slate-500 p-1">Date (mm/dd/yyyy)</th>
           <th class="border border-slate-500 p-1">Temp (F)</th>
-          <th class="border border-slate-500 p-1">Description</th>
-          <th class="border border-slate-500 p-1">Main</th>
-          <th class="border border-slate-500 p-1">Pressure</th>
-          <th class="border border-slate-500 p-1">Humidity</th>
+          <th class="border border-slate-500 p-1 hidden md:table-cell">Description</th>
+          <th class="border border-slate-500 p-1 hidden md:table-cell">Main</th>
+          <th class="border border-slate-500 p-1 hidden md:table-cell">Pressure</th>
+          <th class="border border-slate-500 p-1 hidden md:table-cell">Humidity</th>
         </tr>
       </thead>
       <tbody>
@@ -23,16 +23,16 @@
             {{ formatDate(forecast.dt) }}
           </td>
           <td class="border border-slate-500 p-1">{{ forecast.main.temp }}</td>
-          <td class="border border-slate-500 p-1">
+          <td class="border border-slate-500 p-1 hidden md:table-cell">
             {{ getForecastWeatherDescription(forecast) }}
           </td>
-          <td class="border border-slate-500 p-1">
+          <td class="border border-slate-500 p-1 hidden md:table-cell">
             {{ getForecastWeatherMain(forecast) }}
           </td>
-          <td class="border border-slate-500 p-1">
+          <td class="border border-slate-500 p-1 hidden md:table-cell">
             {{ forecast.main.pressure }}
           </td>
-          <td class="border border-slate-500 p-1">
+          <td class="border border-slate-500 p-1 hidden md:table-cell">
             {{ forecast.main.humidity }}
           </td>
         </tr>
