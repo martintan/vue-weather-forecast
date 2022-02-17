@@ -1,8 +1,26 @@
 import { Auth0 } from '@/utils/auth';
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import {
+  createRouter,
+  createWebHistory,
+  NavigationGuardNext,
+  RouteLocationNormalized,
+  RouteRecordRaw,
+} from 'vue-router';
 import Home from '../views/Home.vue';
 import Login from '../views/Login.vue';
+import Weather from '../views/Weather.vue';
 import { authPlugin } from '@/utils/auth';
+
+const requireAuth = (
+  _: RouteLocationNormalized,
+  __: RouteLocationNormalized,
+  next: NavigationGuardNext
+) => {
+  if (!authPlugin.isAuthenticated.value) {
+    return next({ name: 'login', replace: true });
+  }
+  next();
+};
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -10,12 +28,7 @@ const routes: Array<RouteRecordRaw> = [
     name: 'home',
     component: Home,
     // beforeEnter: Auth0.routeGuard,
-    beforeEnter: (_, __, next) => {
-      if (!authPlugin.isAuthenticated.value) {
-        return next({ name: 'login', replace: true });
-      }
-      next();
-    },
+    beforeEnter: requireAuth,
   },
   {
     path: '/login',
@@ -29,6 +42,12 @@ const routes: Array<RouteRecordRaw> = [
       }
       next();
     },
+  },
+  {
+    path: '/weather',
+    name: 'weather',
+    component: Weather,
+    beforeEnter: requireAuth,
   },
 ];
 

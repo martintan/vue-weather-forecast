@@ -18,6 +18,27 @@ npm run serve
 npm run build
 ```
 
+## Weather Forecasting
+
+This project uses Open Weather API to retrieve the forecast data.
+In particular, we are using the API request by city name endpoint, to retrieve forecast data
+based on a city name.
+
+
+`axios` is used to make the HTTP GET Request to the API endpoint (See **Project Third Party Dependencies**).
+
+
+Useful resources:
+1. [The weather forecast API JSON Response](https://openweathermap.org/forecast16#JSON)
+2. [Built-in API request by city name](https://openweathermap.org/forecast16#name16)
+
+## Project Third Party Dependencies
+
+1. TailwindCSS v3.0.23
+2. Auth0 v1.20.0 `@auth0/auth0-spa-js`
+3. Axios v0.26.0
+4. Date-fns v2.28.0
+
 ## Screens Overview
 
 All screens are organized under `src/views`.

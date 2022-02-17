@@ -3,7 +3,6 @@ import App from './App.vue';
 import { AUTH0_CLIENT_ID, AUTH0_DOMAIN } from './constants';
 import './index.css';
 import router from './router';
-import { store } from './store';
 import { Auth0 } from './utils/auth';
 
 (async () => {
@@ -23,5 +22,5 @@ import { Auth0 } from './utils/auth';
   });
 
   console.log('Finished initalizing Auth0');
-  createApp(App).use(router).use(store).use(Auth0Plugin).mount('#app');
+  createApp(App).use(router).use(Auth0Plugin).mount('#app');
 })();
