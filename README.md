@@ -1,4 +1,5 @@
-# vue-weather-forecast
+# Vue Weather Forecast
+
 
 ## Project setup
 ```
@@ -14,6 +15,8 @@ npm run serve
 ```
 npm run build
 ```
+
+## Additional commands
 
 ### Run your unit tests
 ```
