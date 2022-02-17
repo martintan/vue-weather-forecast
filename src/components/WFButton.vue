@@ -1,11 +1,13 @@
 <template>
   <button
-    class="rounded-lg bg-blue-700 text-white px-4 py-2 flex items-center disabled:opacity-50"
+    class="rounded-lg bg-blue-700 text-white px-4 py-2 disabled:opacity-50"
     @click="handleClick"
     :disabled="loading"
   >
-    <Loading :loading="loading" />
-    <slot></slot>
+    <div class="flex items-center">
+      <Loading :loading="loading" />
+      <slot></slot>
+    </div>
   </button>
 </template>
 

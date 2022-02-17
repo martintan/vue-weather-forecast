@@ -62,7 +62,7 @@ function logout(o: LogoutOptions) {
   return client.logout(o);
 }
 
-const authPlugin = {
+export const authPlugin = {
   isAuthenticated: computed(() => state.isAuthenticated),
   loading: computed(() => state.loading),
   user: computed(() => state.user),

@@ -1,12 +1,13 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import { auth0ClientId, auth0Domain } from './constants';
+import { AUTH0_CLIENT_ID, AUTH0_DOMAIN } from './constants';
 import './index.css';
 import router from './router';
 import { store } from './store';
 import { Auth0 } from './utils/auth';
 
 (async () => {
+  console.log('Initializing Auth0');
   const Auth0Plugin = await Auth0.init({
     onRedirectCallback: (appState) => {
       router.push(
@@ -15,11 +16,12 @@ import { Auth0 } from './utils/auth';
           : window.location.pathname
       );
     },
-    clientId: auth0ClientId,
-    domain: auth0Domain,
+    clientId: AUTH0_CLIENT_ID,
+    domain: AUTH0_DOMAIN,
     audience: '',
     redirectUri: window.location.origin,
   });
 
+  console.log('Finished initalizing Auth0');
   createApp(App).use(router).use(store).use(Auth0Plugin).mount('#app');
 })();
