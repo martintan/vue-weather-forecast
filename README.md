@@ -1,5 +1,20 @@
 # Vue Weather Forecast
 
+- [Vue Weather Forecast](#vue-weather-forecast)
+  - [Project setup](#project-setup)
+    - [Compiles and hot-reloads for development](#compiles-and-hot-reloads-for-development)
+    - [Compiles and minifies for production](#compiles-and-minifies-for-production)
+  - [Weather Forecasting](#weather-forecasting)
+  - [Project Third Party Dependencies](#project-third-party-dependencies)
+  - [Screens Overview](#screens-overview)
+  - [Development notes](#development-notes)
+    - [Component conventions](#component-conventions)
+    - [How to inject & use the Auth0 plugin in a component](#how-to-inject--use-the-auth0-plugin-in-a-component)
+  - [Additional commands](#additional-commands)
+    - [Run your unit tests](#run-your-unit-tests)
+    - [Lints and fixes files](#lints-and-fixes-files)
+    - [Customize configuration](#customize-configuration)
+
 ## Project setup
 
 ```
