@@ -71,6 +71,8 @@ export default defineComponent({
     };
   },
   methods: {
+    // Use .push() instead of .back() or .go(-1) because
+    // the latter seems to be malfunctioning / unresponsive.
     back() {
       this.$router.push({ name: 'home' });
     },
@@ -79,6 +81,8 @@ export default defineComponent({
       if (forecast.weather.length > 0) return forecast.weather.shift()?.main;
       return '-';
     },
+    // The current weather description data from the API
+    // is returned as one or more weather descriptions / array.
     getForecastWeatherDescription(forecast: IForecast) {
       // For now, just return the first element from the array
       if (forecast.weather.length > 0)
@@ -89,6 +93,8 @@ export default defineComponent({
       return format(new Date(epochDateTime), 'MM/dd/yyyy');
     },
   },
+  // Every time the page mounts, check if the route query contains
+  // a city and call the Weather Forecast API.
   async mounted() {
     const city = this.$route.query.city as string;
     if (city) {

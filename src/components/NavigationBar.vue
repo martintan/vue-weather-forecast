@@ -30,9 +30,11 @@ export default defineComponent({
     },
   },
   methods: {
+    // Navigate back to the main / home page when clicking the logo
     handleLogoClick() {
       this.$router.push({ name: 'home' });
     },
+    // Call Auth0's logout function
     async logout() {
       try {
         const auth = (this as any).Auth as IAuthPlugin;

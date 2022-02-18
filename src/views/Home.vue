@@ -38,14 +38,19 @@ export default defineComponent({
   inject: ['Auth'],
   methods: {
     async displayWeather() {
-      console.log('display weather triggered');
+      // Navigate straight to the Weather page and pass the city into the query
       this.$router.push({ name: 'weather', query: { city: this.city } });
     },
   },
+  // Every time this page mounts we will load the user's Github profile information
+  // into the component state.
+  // Alternative way is to load it via computed: { ... }.
   mounted() {
     const auth = (this as any).Auth as IAuthPlugin;
     const user = auth.user.value;
     this.fullname = user?.name ?? '';
+    // Github Repositories always have the format of "https://github.com/" + the Github username
+    // Based on checking the Auth0 Github User payload we can get the username from "nickname".
     this.githubRepoUrl =
       user && user.nickname ? 'https://github.com/' + user.nickname : '';
   },
