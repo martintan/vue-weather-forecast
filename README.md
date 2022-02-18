@@ -13,7 +13,8 @@
   - [Additional commands](#additional-commands)
     - [Run your unit tests](#run-your-unit-tests)
     - [Lints and fixes files](#lints-and-fixes-files)
-    - [Customize configuration](#customize-configuration)
+  - [Improvement Roadmap](#improvement-roadmap)
+  - [Customize configuration](#customize-configuration)
 
 ## Project setup
 
@@ -105,6 +106,20 @@ npm run test:unit
 npm run lint
 ```
 
-### Customize configuration
+
+## Improvement Roadmap
+
+Some things that may be improved in the codebase:
+
+
+1. Create abstraction for Weather Forecast API data (instead of accessing the data directly).
+   
+   - Decouples the Weather Forecast data from the UI
+2. Create abstraction for Auth0 Client
+  
+   - Decouples Auth0 Client code from the UI
+
+
+## Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
