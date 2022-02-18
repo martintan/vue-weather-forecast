@@ -90,7 +90,7 @@ export default defineComponent({
       return '-';
     },
     formatDate(epochDateTime: number) {
-      return format(new Date(epochDateTime), 'MM/dd/yyyy');
+      return format(new Date(epochDateTime * 1000), 'MM/dd/yyyy');
     },
   },
   // Every time the page mounts, check if the route query contains
