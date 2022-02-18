@@ -1,6 +1,6 @@
 <template>
   <div class="h-screen">
-    <navigation-bar />
+    <WFNavigationBar />
     <div>
       <router-view />
     </div>
@@ -9,9 +9,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import NavigationBar from '@/components/NavigationBar.vue';
+import WFNavigationBar from '@/components/WFNavigationBar.vue';
 
 export default defineComponent({
-  components: { NavigationBar },
+  components: { WFNavigationBar },
 });
 </script>
